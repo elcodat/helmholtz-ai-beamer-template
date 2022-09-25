@@ -1,0 +1,149 @@
+\documentclass[final]{beamer}
+
+%-----------------------------------------------------------------------------
+% packages
+%-----------------------------------------------------------------------------
+
+% Nice math
+\usepackage{lmodern}
+\usefonttheme[onlymath]{serif}
+
+\usepackage[orientation=portrait,size=a0,scale=1.7]{beamerposter}
+
+% Needed for poor man's theme hack done here
+\usepackage{tikz}
+\usepackage{array}
+
+% If you use subfigures
+%%\usepackage{subcaption}
+
+\usepackage[
+    backend=biber,
+    date=year,
+    doi=false,
+    eprint=false,
+    giveninits=true,
+    isbn=false,
+    maxbibnames=1,
+    sorting=none,
+    url=true,
+    style=alphabetic,
+    ]{biblatex}
+\addbibresource{lit.bib}
+
+% bibliography font
+\AtBeginBibliography{\small}
+
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+
+\usepackage{lipsum}
+
+%-----------------------------------------------------------------------------
+% poor man's H.AI theme
+%-----------------------------------------------------------------------------
+
+\mode<presentation> {
+    \usetheme{}
+}
+\setbeamercolor{block body}{bg=white}
+\setbeamercolor{block title}{bg=lightgray}
+\setbeamertemplate{caption}[numbered]
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{headline}{
+    \leavevmode
+    \begin{minipage}{0.3\textwidth}
+        \hspace{1cm}
+        \includegraphics[width=\textwidth]{theme_pics/header_left.png}
+    \end{minipage}
+    \hfill
+    \includegraphics[width=0.2\textwidth]{theme_pics/header_right.png}
+}
+
+\setbeamertemplate{footline}{
+    \leavevmode
+    \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0] {\includegraphics[width=\textwidth]{theme_pics/footer.png}};
+        \draw (30, 0) node[inner sep=0] {\includegraphics[height=0.03\textheight]{theme_pics/helmholtz.png}};
+        \draw (35.5, -0.1) node[inner sep=0] {\includegraphics[height=0.03\textheight]{theme_pics/ai.png}};
+    \end{tikzpicture}
+    \vspace{-0.5cm}
+}
+
+
+%-----------------------------------------------------------------------------
+% macros
+%-----------------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------------
+% tile, authors
+%-----------------------------------------------------------------------------
+
+\title[]{\textbf{Big Science!}}
+\author{%
+    My Name\inst{1}\and%
+    That Other Person\inst{1,2}\and%
+}
+\institute{
+    \small
+    \color{gray}{
+        \inst{1}Helmholtz-Zentrum Foo Bar
+        \inst{3}University of Baz
+        }
+    }
+\date{}
+
+
+%-----------------------------------------------------------------------------
+% content
+%-----------------------------------------------------------------------------
+
+\begin{document}
+%
+\begin{frame}{}
+%
+\begin{columns}[t]
+    \column{0.8\textwidth}
+        \maketitle
+    % Some logo of your institution if you want.
+    \column{0.2\textwidth}
+        \begin{minipage}[c]{\textwidth}
+            \includegraphics[width=0.8\textwidth]{logos/hzdr.pdf}
+        \end{minipage}
+\end{columns}
+\vfill
+\begin{columns}[t]
+    \column{0.6\textwidth}
+        \begin{block}{Introduction}
+        \lipsum[1]
+        \cite{steinbach_2022_MachineLearningStateoftheArt,
+        daxberger_2021_LaplaceReduxEffortless,
+        lopez-paz_2018_RevisitingClassifierTwoSample}
+        \end{block}
+    \column{0.3\textwidth}
+        \begin{block}{Some block here}
+            \lipsum[2]
+        \end{block}
+\end{columns}
+\vfill
+\begin{columns}[t]
+    \column{0.45\textwidth}
+        \begin{block}{Science}
+            \lipsum[3]
+        \end{block}
+    \column{0.45\textwidth}
+        \begin{block}{More Science!}
+            \lipsum[4]
+        \end{block}
+\end{columns}
+\vfill
+\begin{columns}[t]
+    \column{0.93\textwidth}
+        \begin{block}{References}
+            \printbibliography
+        \end{block}
+\end{columns}
+%
+\end{frame}
+\end{document}
