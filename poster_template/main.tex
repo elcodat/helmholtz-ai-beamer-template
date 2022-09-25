@@ -12,7 +12,10 @@
 
 % Needed for poor man's theme hack done here
 \usepackage{tikz}
-\usepackage{array}
+
+% For more control over alignment in tabular cells, e.g.
+%   \begin{tabular}{m{0.3\linewidth}m{0.7\linewidth}}
+%%\usepackage{array}
 
 % If you use subfigures
 %%\usepackage{subcaption}
@@ -36,6 +39,7 @@
 
 \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
 
+% To generate dummy text here using \lipsum
 \usepackage{lipsum}
 
 %-----------------------------------------------------------------------------
@@ -83,13 +87,13 @@
 \title[]{\textbf{Big Science!}}
 \author{%
     My Name\inst{1}\and%
-    That Other Person\inst{1,2}\and%
+    That Other Person\inst{1,2}
 }
 \institute{
     \small
     \color{gray}{
-        \inst{1}Helmholtz-Zentrum Foo Bar
-        \inst{3}University of Baz
+        \inst{1}Helmholtz-Zentrum Foo
+        \inst{2}University of Bar
         }
     }
 \date{}
@@ -116,10 +120,10 @@
 \begin{columns}[t]
     \column{0.6\textwidth}
         \begin{block}{Introduction}
-        \lipsum[1]
-        \cite{steinbach_2022_MachineLearningStateoftheArt,
-        daxberger_2021_LaplaceReduxEffortless,
-        lopez-paz_2018_RevisitingClassifierTwoSample}
+            \lipsum[1]
+            \cite{steinbach_2022_MachineLearningStateoftheArt,
+            daxberger_2021_LaplaceReduxEffortless,
+            lopez-paz_2018_RevisitingClassifierTwoSample}
         \end{block}
     \column{0.3\textwidth}
         \begin{block}{Some block here}
