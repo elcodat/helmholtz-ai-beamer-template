@@ -60,18 +60,12 @@
         \hspace{1cm}
         \includegraphics[width=\textwidth]{theme_pics/header_left.png}
     \end{minipage}
+    % Some logo of your institution if you want.
     \hfill
-    \includegraphics[width=0.2\textwidth]{theme_pics/header_right.png}
-}
-
-\setbeamertemplate{footline}{
-    \leavevmode
-    \begin{tikzpicture}
-        \draw (0, 0) node[inner sep=0] {\includegraphics[width=\textwidth]{theme_pics/footer.png}};
-        \draw (30, 0) node[inner sep=0] {\includegraphics[height=0.03\textheight]{theme_pics/helmholtz.png}};
-        \draw (35.5, -0.1) node[inner sep=0] {\includegraphics[height=0.03\textheight]{theme_pics/ai.png}};
-    \end{tikzpicture}
-    \vspace{-0.5cm}
+    \begin{minipage}[c]{0.2\textwidth}
+        \vspace{1cm}
+        \includegraphics[width=0.9\textwidth]{logos/hzdr.pdf}
+    \end{minipage}
 }
 
 
@@ -106,16 +100,7 @@
 \begin{document}
 %
 \begin{frame}{}
-%
-\begin{columns}[t]
-    \column{0.8\textwidth}
-        \maketitle
-    % Some logo of your institution if you want.
-    \column{0.2\textwidth}
-        \begin{minipage}[c]{\textwidth}
-            \includegraphics[width=0.8\textwidth]{logos/hzdr.pdf}
-        \end{minipage}
-\end{columns}
+\maketitle
 \vfill
 \begin{columns}[t]
     \column{0.6\textwidth}
